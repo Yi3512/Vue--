@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    function instance_of(Case, Constructor) {
+    //   console.log('Case:', typeof Case, 'Constructor1:', typeof Constructor);
+      // 基本数据类型 返回false
+      if (
+        (typeof Case != 'object' && typeof Case != 'function') ||
+        Case == 'null'
+      )
+        return false;
+      let CaseProto = Object.getPrototypeOf(Case);
+
+    //   console.log('CaseProto:', CaseProto);
+    //   console.log('Constructor:', Constructor.prototype);
+      while (true) {
+        // 查到原型链顶端，仍未查到，返回false
+        if (CaseProto == null) return false;
+        // 找到相同类型
+        if (CaseProto == Constructor.prototype) return true;
+        CaseProto = Object.getPrototypeOf(CaseProto);
+      }
+    }
+
+    var a = [];
+    var b = {};
+
+    function Foo() {}
+    var c = new Foo();
+
+    function child() {}
+    function father() {}
+    child.prototype = new father();
+    var d = new child();
+
+    console.log(instance_of(a, Array)); // true
+    console.log(instance_of(b, Object)); // true
+    console.log(instance_of(b, Array)); // false
+    console.log(instance_of(a, Object)); // true
+    console.log(instance_of(c, Foo)); // true
+    console.log(instance_of(d, child)); // true
+    console.log(instance_of(d, father)); // true
+  </script>
+</html>
