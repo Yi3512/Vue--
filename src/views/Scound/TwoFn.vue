@@ -1,5 +1,11 @@
 <template>
-  <div>国外体育</div>
+      <div>
+        <h1>Alice</h1>
+      <ul>
+        <li>qwe</li>
+        <li>asd</li>
+      </ul>
+    </div>
 </template>
 
 <script>

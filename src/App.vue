@@ -1,11 +1,11 @@
 <template>
   <div>
-    <h1>嵌套路由</h1>
     <div class="op">
-      <router-link to="/add">首页</router-link>
-      <router-link to="/arr">新闻</router-link>
-      <router-link to="/one">体育</router-link>
+      <router-link to="/add">UI-Router</router-link>
+      <router-link to="/one">Contacts</router-link>
+      <router-link to="/arr">About</router-link>
     </div>
+    <hr />
     <div>
       <router-view></router-view>
     </div>

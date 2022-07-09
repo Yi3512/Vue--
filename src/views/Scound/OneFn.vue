@@ -1,5 +1,11 @@
 <template>
-  <div>国内体育新闻</div>
+      <div>
+        <h1>All</h1>
+      <ul>
+        <li>123</li>
+        <li>456</li>
+      </ul>
+    </div>
 </template>
 
 <script>

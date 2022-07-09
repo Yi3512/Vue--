@@ -10,38 +10,56 @@ import One from '@/views/MyOne.vue';
 import OneFn from '@/views/Scound/OneFn.vue';
 import TwoFn from '@/views/Scound/TwoFn.vue';
 import ThreeFn from '@/views/Scound/ThreeFn .vue';
-import FourFn from '@/views/Scound/FourFn.vue';
+//三级
+import BlogFn from '@/views/Scound/Three/BlogFn.vue';
+import FaxFn from '@/views/Scound/Three/FaxFn.vue';
 
 Vue.use(VueRouter);
 
 const routes = [
   {
+    path:'/',
+    redirect:'/add'
+  },
+  {
     path: '/add',
+    name:'add',
     component: Add,
   },
   {
     path: '/arr',
+    name:'arr',
     component: Arr,
   },
   {
     path: '/one',
+    name:'one',
     component: One,
     children: [
       {
         path: 'onefn',
+        name:'onefn',
         component: OneFn,
       },
       {
         path: 'twofn',
+        name:'twofn',
         component: TwoFn,
       },
       {
-        path: 'threeFn',
+        path: 'threefn',
+        name:'threefn',
         component: ThreeFn,
-      },
-      {
-        path: 'fourFn',
-        component: FourFn,
+        children: [
+          {
+            path:'blog',
+            component: BlogFn,
+          },
+          {
+            path:'fax',
+            component: FaxFn,
+          }
+        ],
       },
     ],
   },
