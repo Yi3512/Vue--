@@ -1,8 +1,5 @@
 <template>
-  <div>
-    <p>OEE</p>
-    <p>OEE</p>
-  </div>
+  <div>国外体育新闻</div>
 </template>
 
 <script>

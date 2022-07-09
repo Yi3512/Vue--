@@ -1,34 +1,55 @@
 import Vue from 'vue';
 import App from './App.vue';
-import VueRouter from 'vue-router';
 
-import MyAdd from '@/views/MyAdd.vue';
-import MyDPP from '@/views/MyDPP.vue';
-import MyIndex from '@/views/MyIndex.vue';
-import MyOEE from '@/views/MyOEE.vue';
+import VueRouter from 'vue-router';
+//一级
+import Add from '@/views/MyAdd.vue';
+import Arr from '@/views/MyArr.vue';
+import One from '@/views/MyOne.vue';
+//二级
+import OneFn from '@/views/Scound/OneFn.vue';
+import TwoFn from '@/views/Scound/TwoFn.vue';
+import ThreeFn from '@/views/Scound/ThreeFn .vue';
+import FourFn from '@/views/Scound/FourFn.vue';
 
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: '/add',
-    component: MyAdd,
+    component: Add,
   },
   {
-    path: '/dpp',
-    component: MyDPP,
+    path: '/arr',
+    component: Arr,
   },
   {
-    path: '/index',
-    component: MyIndex,
-  },
-  {
-    path: '/oee',
-    component: MyOEE,
+    path: '/one',
+    component: One,
+    children: [
+      {
+        path: 'onefn',
+        component: OneFn,
+      },
+      {
+        path: 'twofn',
+        component: TwoFn,
+      },
+      {
+        path: 'threeFn',
+        component: ThreeFn,
+      },
+      {
+        path: 'fourFn',
+        component: FourFn,
+      },
+    ],
   },
 ];
 
-const router = new VueRouter({ routes });
+const router = new VueRouter({
+  routes,
+});
 
 Vue.config.productionTip = false;
 

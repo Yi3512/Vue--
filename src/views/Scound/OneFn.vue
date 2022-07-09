@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <p>新闻</p>
-  </div>
+  <div>国内体育新闻</div>
 </template>
 
 <script>

@@ -1,8 +1,5 @@
 <template>
-  <div>
-    <p>DPP</p>
-    <p>DPP</p>
-  </div>
+  <div>国内体育</div>
 </template>
 
 <script>

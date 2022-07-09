@@ -1,8 +1,5 @@
 <template>
-  <div>
-    <p>你的我的</p>
-    <p>我的你的</p>
-  </div>
+  <div>国外体育</div>
 </template>
 
 <script>

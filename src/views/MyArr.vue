@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>新闻</p>
+    <p>体育</p>
   </div>
 </template>
 
